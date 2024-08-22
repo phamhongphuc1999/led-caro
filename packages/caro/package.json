@@ -1,26 +1,61 @@
 {
-    "name": "caro",
-    "private": true,
-    "version": "0.0.1",
-    "type": "module",
-    "scripts": {
-        "dev": "vite --host --port 3000",
-        "build": "tsc -b && vite build",
-        "lint": "eslint .",
-        "preview": "vite preview"
-    },
-    "dependencies": {
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1"
-    },
-    "devDependencies": {
-        "@eslint/js": "^9.9.0",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
-        "@vitejs/plugin-react": "^4.3.1",
-        "globals": "^15.9.0",
-        "typescript": "^5.5.3",
-        "typescript-eslint": "^8.0.1",
-        "vite": "^5.4.1"
-    }
+	"name": "@peter-present/led-caro",
+	"version": "0.0.1",
+	"description": "Simple led caro made for fun",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"sideEffects": false,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/phamhongphuc1999/led-caro"
+	},
+	"bugs": {
+		"url": "https://github.com/phamhongphuc1999/led-caro/issues"
+	},
+	"homepage": "https://github.com/phamhongphuc1999/led-caro#readme",
+	"keywords": [
+		"react",
+		"caro"
+	],
+	"author": "phamhongphuc1999",
+	"license": "ISC",
+	"scripts": {
+		"dev": "vite --host --port 3000",
+		"build": "tsc -b && vite build",
+		"lint": "eslint .",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.9.0",
+		"@types/node": "^22.5.0",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"globals": "^15.9.0",
+		"path": "^0.12.7",
+		"postcss": "^8.4.41",
+		"tailwindcss": "^3.4.10",
+		"typescript": "^5.5.3",
+		"typescript-eslint": "^8.0.1",
+		"vite": "^5.4.1",
+		"vite-plugin-dts": "^3.9.1"
+	},
+	"contributors": [
+		{
+			"name": "Phạm Hồng Phúc",
+			"email": "phamhongphuc12atm1@gmail.com",
+			"url": "https://github.com/phamhongphuc1999"
+		}
+	]
 }
