@@ -1,17 +1,17 @@
-.led-caro-contain {
+.basic-caro-contain {
   position: relative;
   overflow: hidden;
 }
-.led-caro-full {
+.basic-caro-full {
   width: 100%;
   height: 100%;
 }
-.led-caro-contain-row {
+.basic-caro-contain-row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.led-caro-contain-column {
+.basic-caro-contain-column {
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -20,23 +20,23 @@
   right: 0;
   left: 0;
 }
-.led-caro-stick-row {
+.basic-caro-stick-row {
   height: 1px;
   width: 100%;
 }
-.led-caro-stick-row:first-child {
+.basic-caro-stick-row:first-child {
   height: 0px;
 }
-.led-caro-stick-row:last-child {
+.basic-caro-stick-row:last-child {
   height: 0px;
 }
-.led-caro-stick-column {
+.basic-caro-stick-column {
   width: 1px;
   height: 100%;
 }
-.led-caro-stick-column:first-child {
+.basic-caro-stick-column:first-child {
   width: 0px;
 }
-.led-caro-stick-column:last-child {
+.basic-caro-stick-column:last-child {
   width: 0px;
 }
