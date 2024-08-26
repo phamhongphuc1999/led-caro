@@ -1,25 +1,19 @@
 import { BasicCaro } from 'lib/BasicCaro';
 import { GridCaro } from 'lib/GridCaro';
+import './app.style.css';
 
 export function App() {
   return (
-    <div style={{ backgroundColor: 'gray', width: '100vw', height: '100vh' }}>
+    <div id="root">
       <BasicCaro style={{ width: '100px', marginBottom: '1rem' }} rows={5} columns={5} />
       <GridCaro
-        style={{ width: '300px' }}
-        gridProps={{
-          style: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: '50%',
-          },
-        }}
-        rows={10}
-        columns={10}
+        stickColor="black"
+        stickSize={1}
+        style={{ width: '400px' }}
+        rows={15}
+        columns={15}
         squares={{
-          'odd-5': { style: { backgroundColor: 'black' } },
-          'even-3': { style: { backgroundColor: 'orange' } },
+          '<5->=2': { className: 'grid-item1' },
         }}
       />
     </div>

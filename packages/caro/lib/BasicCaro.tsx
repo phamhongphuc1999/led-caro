@@ -34,9 +34,13 @@ export function BasicCaro(params: BasicCaroProps) {
         })}
       </div>
       <div className="basic-caro-contain-column">
-        {new Array(columns + 1).fill(0).map((_) => {
+        {new Array(columns + 1).fill(0).map((_, index) => {
           return (
-            <div className="basic-caro-stick-column" style={{ backgroundColor: stickColor }} />
+            <div
+              key={index}
+              className="basic-caro-stick-column"
+              style={{ backgroundColor: stickColor }}
+            />
           );
         })}
       </div>
