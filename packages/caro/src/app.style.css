@@ -5,6 +5,11 @@
   min-height: 100vh;
   height: fit-content;
 }
+.container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
 .grid-item1 {
   background-color: #f8b500;
 }

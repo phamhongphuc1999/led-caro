@@ -34,7 +34,7 @@ function isBase(position: number, style?: BaseSquareStyleType): boolean {
   } else return true;
 }
 
-function makeSquareStyle(
+export function makeSquareStyle(
   rows: number,
   columns: number,
   style: SquareStyleType,

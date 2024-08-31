@@ -22,6 +22,10 @@ export type SquareStyleType = {
   yAxis?: BaseSquareStyleType;
   props: DivProps;
 };
+export type AnimatedSquareStyleType = {
+  span?: number;
+  props?: Array<SquareStyleType>;
+};
 export interface RootCaroProps extends DivProps {
   rows: number;
   columns: number;
@@ -36,4 +40,9 @@ export interface GridCaroProps extends BasicCaroProps {
   borderMode?: 'normal' | 'container' | 'none';
   squares?: Array<SquareStyleType>;
   gridProps?: (row: number, column: number) => DivProps;
+}
+
+export interface AnimationCaroProps extends Omit<GridCaroProps, 'squares'> {
+  squares?: Array<AnimatedSquareStyleType>;
+  interval?: number;
 }
