@@ -2,9 +2,26 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 export type CaroBoardMode = 'square' | 'normal';
-type Operator = '>' | '<' | '>=' | '<=';
-export type SquareIndexType = 'odd' | 'even' | `${Operator}${number}` | number;
+export type SimpleSquareStyleType = { [key: `${number}-${number}`]: DivProps | undefined };
 
+export type CoreSquareStyleType = Partial<{
+  $gt: number;
+  $gte: number;
+  $lt: number;
+  $lte: number;
+  $e: number;
+  $regex: RegExp;
+  odd: boolean;
+  even: boolean;
+}>;
+type SquareStyleTypeAnd = CoreSquareStyleType;
+type SquareStyleTypeOr = { $or?: Array<CoreSquareStyleType> };
+export type BaseSquareStyleType = SquareStyleTypeAnd & SquareStyleTypeOr;
+export type SquareStyleType = {
+  xAxis?: BaseSquareStyleType;
+  yAxis?: BaseSquareStyleType;
+  props: DivProps;
+};
 export interface RootCaroProps extends DivProps {
   rows: number;
   columns: number;
@@ -14,12 +31,9 @@ export interface BasicCaroProps extends RootCaroProps {
   stickSize?: number;
   stickColor?: string;
 }
-export type SquareKeyType = `${SquareIndexType}-${SquareIndexType}`;
-export type SquareStyleType = Partial<{
-  [key in SquareKeyType]: DivProps;
-}>;
+
 export interface GridCaroProps extends BasicCaroProps {
   borderMode?: 'normal' | 'container' | 'none';
-  squares?: SquareStyleType;
-  gridProps?: DivProps;
+  squares?: Array<SquareStyleType>;
+  gridProps?: (row: number, column: number) => DivProps;
 }
