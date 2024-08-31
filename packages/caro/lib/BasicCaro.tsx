@@ -19,26 +19,26 @@ export function BasicCaro(params: BasicCaroProps) {
           border: `${stickSize}px solid ${stickColor}`,
           aspectRatio: mode == 'square' ? `${columns / rows}` : 'initial',
         },
-        className: 'basic-caro-contain',
+        className: 'led-caro-basic-contain',
       })}
     >
-      <div className="basic-caro-full basic-caro-contain-row">
+      <div className="led-caro-basic-full led-caro-basic-contain-row">
         {new Array(rows + 1).fill(0).map((_, index) => {
           return (
             <div
               key={index}
-              className="basic-caro-stick-row"
+              className="led-caro-basic-stick-row"
               style={{ backgroundColor: stickColor }}
             />
           );
         })}
       </div>
-      <div className="basic-caro-contain-column">
+      <div className="led-caro-basic-contain-column">
         {new Array(columns + 1).fill(0).map((_, index) => {
           return (
             <div
               key={index}
-              className="basic-caro-stick-column"
+              className="led-caro-basic-stick-column"
               style={{ backgroundColor: stickColor }}
             />
           );

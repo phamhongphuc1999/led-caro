@@ -1,4 +1,4 @@
-import { useSquareStyle } from './hooks/useSquareStyle';
+import { useSquaresStyle } from './hooks/useSquaresStyle';
 import './styles/grid-caro.style.css';
 import { GridCaroProps } from './type';
 import { styleMerge } from './utils';
@@ -15,7 +15,7 @@ export function GridCaro(params: GridCaroProps) {
     mode = 'square',
     ...props
   } = params;
-  const { fn } = useSquareStyle(squares);
+  const styles = useSquaresStyle(rows, columns, squares);
 
   return (
     <div
@@ -27,24 +27,25 @@ export function GridCaro(params: GridCaroProps) {
               ? `${stickSize / 2}px solid ${stickColor}`
               : '0px',
         },
-        className: 'grid-caro-contain',
+        className: 'led-caro-grid-contain',
       })}
     >
       {new Array(rows).fill(0).map((_, i) => {
         return (
-          <div key={i} className="gird-caro-row">
+          <div key={i} className="led-caro-gird-row">
             {new Array(columns).fill(0).map((_, j) => {
-              const _props = fn ? fn(i, j) : undefined;
+              const _baseProps = gridProps ? gridProps(i, j) : {};
+              const _props = styles[`${i}-${j}`];
 
               return (
                 <div
                   key={`${i}-${j}`}
-                  {...styleMerge(gridProps, _props, {
+                  {...styleMerge(_baseProps, _props, {
                     style: {
                       border:
                         borderMode == 'normal' ? `${stickSize / 2}px solid ${stickColor}` : '',
                     },
-                    className: 'grid-caro-item',
+                    className: 'led-caro-grid-item',
                   })}
                 />
               );
