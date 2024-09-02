@@ -20,7 +20,7 @@ export type CoreSquareStyleType = Partial<{
 }>;
 type SquareStyleTypeAnd = CoreSquareStyleType;
 type SquareStyleTypeOr = { $or?: Array<CoreSquareStyleType> };
-export type BaseSquareStyleType = SquareStyleTypeAnd & SquareStyleTypeOr;
+export type BaseSquareStyleType = number | (SquareStyleTypeAnd & SquareStyleTypeOr);
 export type LocationType = { xAxis?: BaseSquareStyleType; yAxis?: BaseSquareStyleType };
 export type SquareStyleType = LocationType & {
   $or?: Array<LocationType>;

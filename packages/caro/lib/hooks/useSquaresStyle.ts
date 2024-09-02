@@ -11,12 +11,19 @@ export function makeSquareStyle(
   const _yAxis = square.yAxis;
   const _props = square.props;
   const result: SimpleSquareStyleType = {};
-  for (let row = 0; row < rows; row++) {
-    for (let column = 0; column < columns; column++) {
-      const isXOk = isBase(row, _xAxis);
-      const isYOk = isBase(column, _yAxis);
-      if (isXOk && isYOk)
-        result[`${row}-${column}`] = styleMerge(result[`${row}-${column}`], _props);
+  let normalCheck = true;
+  const orCheck = Boolean(square.$or);
+  if (_xAxis == undefined && _yAxis == undefined && orCheck) {
+    normalCheck = false;
+  }
+  if (normalCheck) {
+    for (let row = 0; row < rows; row++) {
+      for (let column = 0; column < columns; column++) {
+        const isXOk = isBase(row, _xAxis);
+        const isYOk = isBase(column, _yAxis);
+        if (isXOk && isYOk)
+          result[`${row}-${column}`] = styleMerge(result[`${row}-${column}`], _props);
+      }
     }
   }
   const $or = square.$or;

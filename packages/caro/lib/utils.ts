@@ -24,7 +24,8 @@ function isOr(position: number, styles: Array<CoreSquareStyleType>): boolean {
 }
 
 export function isBase(position: number, style?: BaseSquareStyleType): boolean {
-  if (style) {
+  if (style != undefined) {
+    if (typeof style == 'number') return position == style;
     const _isAnd = isAnd(position, style);
     const _isOr = style.$or ? isOr(position, style.$or) : true;
     return _isAnd && _isOr;

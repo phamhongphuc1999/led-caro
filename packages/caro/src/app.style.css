@@ -7,15 +7,17 @@
 }
 .container {
   display: flex;
-  align-items: center;
   gap: 4rem;
 }
 .grid-item1 {
-  background-color: #f8b500;
+  background-color: #ad6636;
 }
 .grid-item2 {
-  background-color: #fceabb;
+  background-color: #ad36a3;
 }
 .grid-item3 {
-  background-color: #ffffff;
+  background-color: #3636ad;
+}
+.grid-item4 {
+  background-color: #6cc75f;
 }
