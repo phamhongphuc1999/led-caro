@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export type CounterType = { tick: number; span: number; index: number };
 export type CaroBoardMode = 'square' | 'normal';
 export type SimpleSquareStyleType = { [key: `${number}-${number}`]: DivProps | undefined };
 export type SimpleAnimatedSquareStyleType = {
@@ -53,4 +54,7 @@ export interface GridCaroProps extends Omit<SimpleGridProps, 'squares'> {
 export interface AnimationCaroProps extends Omit<GridCaroProps, 'squares'> {
   squares?: Array<AnimatedSquareStyleType>;
   interval?: number;
+  events?: {
+    onTick?: (data: CounterType) => void;
+  };
 }

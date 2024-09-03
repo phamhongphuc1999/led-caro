@@ -58,6 +58,9 @@ export function deepMerge<T extends object>(...sources: Array<T | undefined>): T
   }
   return result;
 }
+export function classMerge(...classes: Array<string>): string {
+  return classes.filter((_class) => _class.length > 0).join(' ');
+}
 export function styleMerge<T extends object>(...sources: Array<T | undefined>): T | undefined {
   let result: T | undefined = undefined;
   for (const source of sources) {
@@ -65,7 +68,7 @@ export function styleMerge<T extends object>(...sources: Array<T | undefined>): 
       if (result) {
         const _class1: string = (result as { className?: string }).className ?? '';
         const _class2: string = (source as { className?: string }).className ?? '';
-        const _class = `${_class1} ${_class2}`;
+        const _class = classMerge(_class1, _class2);
         if (_class.length > 0) result = { ..._deepMerge(result, source), className: _class };
         else result = _deepMerge(result, source);
       } else result = source;

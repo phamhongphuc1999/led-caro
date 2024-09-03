@@ -1,6 +1,6 @@
 {
 	"name": "@peter-present/led-caro",
-	"version": "0.0.1",
+	"version": "0.0.12",
 	"description": "Simple led caro made for fun",
 	"type": "module",
 	"main": "dist/index.js",

@@ -5,15 +5,15 @@ const ball1: SquareStyleType = {
   yAxis: 7,
   props: { className: 'grid-item4' },
 };
-export const prop1: Array<SquareStyleType> = [
+const prop1: Array<SquareStyleType> = [
   { xAxis: 0, yAxis: { $gte: 0, $lte: 4 }, props: { className: 'grid-item1' } },
   ball1,
 ];
-export const prop2: Array<SquareStyleType> = [
+const prop2: Array<SquareStyleType> = [
   { xAxis: 0, yAxis: { $gte: 1, $lte: 5 }, props: { className: 'grid-item1' } },
   ball1,
 ];
-export const prop3: Array<SquareStyleType> = [
+const prop3: Array<SquareStyleType> = [
   { xAxis: 0, yAxis: { $gte: 2, $lte: 6 }, props: { className: 'grid-item1' } },
   ball1,
 ];
@@ -22,11 +22,11 @@ const ball2: SquareStyleType = {
   yAxis: 4,
   props: { className: 'grid-item3' },
 };
-export const prop4: Array<SquareStyleType> = [
+const prop4: Array<SquareStyleType> = [
   { xAxis: 0, yAxis: { $gte: 2, $lte: 7 }, props: { className: 'grid-item4' } },
   ball2,
 ];
-export const prop5: Array<SquareStyleType> = [
+const prop5: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 0, yAxis: { $gte: 3, $lte: 7 } },
@@ -36,7 +36,7 @@ export const prop5: Array<SquareStyleType> = [
   },
   ball2,
 ];
-export const prop6: Array<SquareStyleType> = [
+const prop6: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 0, yAxis: { $gte: 4, $lte: 7 } },
@@ -46,7 +46,7 @@ export const prop6: Array<SquareStyleType> = [
   },
   ball2,
 ];
-export const prop7: Array<SquareStyleType> = [
+const prop7: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 0, yAxis: { $gte: 5, $lte: 7 } },
@@ -56,7 +56,7 @@ export const prop7: Array<SquareStyleType> = [
   },
   ball2,
 ];
-export const prop8: Array<SquareStyleType> = [
+const prop8: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 0, yAxis: { $gte: 6, $lte: 7 } },
@@ -66,7 +66,7 @@ export const prop8: Array<SquareStyleType> = [
   },
   ball2,
 ];
-export const prop9: Array<SquareStyleType> = [
+const prop9: Array<SquareStyleType> = [
   {
     xAxis: { $in: [0, 1, 2, 3, 4, 5] },
     yAxis: 7,
@@ -74,7 +74,7 @@ export const prop9: Array<SquareStyleType> = [
   },
   ball2,
 ];
-export const prop10: Array<SquareStyleType> = [
+const prop10: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [1, 2, 3, 4, 5] }, yAxis: 7 },
@@ -84,7 +84,7 @@ export const prop10: Array<SquareStyleType> = [
   },
   ball2,
 ];
-export const prop11: Array<SquareStyleType> = [
+const prop11: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [2, 3, 4, 5] }, yAxis: 7 },
@@ -94,7 +94,7 @@ export const prop11: Array<SquareStyleType> = [
   },
   ball2,
 ];
-export const prop12: Array<SquareStyleType> = [
+const prop12: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [3, 4, 5] }, yAxis: 7 },
@@ -110,7 +110,7 @@ const ball3: SquareStyleType = {
   yAxis: 2,
   props: { className: 'grid-item2' },
 };
-export const prop13: Array<SquareStyleType> = [
+const prop13: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [3, 4, 5] }, yAxis: 7 },
@@ -121,7 +121,7 @@ export const prop13: Array<SquareStyleType> = [
   },
   ball3,
 ];
-export const prop14: Array<SquareStyleType> = [
+const prop14: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [4, 5] }, yAxis: 7 },
@@ -132,7 +132,7 @@ export const prop14: Array<SquareStyleType> = [
   },
   ball3,
 ];
-export const prop15: Array<SquareStyleType> = [
+const prop15: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 5, yAxis: { $in: [5, 6, 7] } },
@@ -147,7 +147,7 @@ const ball4: SquareStyleType = {
   yAxis: 2,
   props: { className: 'grid-item4' },
 };
-export const prop16: Array<SquareStyleType> = [
+const prop16: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 5, yAxis: { $in: [2, 5, 6, 7] } },
@@ -157,7 +157,7 @@ export const prop16: Array<SquareStyleType> = [
   },
   ball4,
 ];
-export const prop17: Array<SquareStyleType> = [
+const prop17: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 4, yAxis: 2 },
@@ -168,7 +168,7 @@ export const prop17: Array<SquareStyleType> = [
   },
   ball4,
 ];
-export const prop18: Array<SquareStyleType> = [
+const prop18: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [3, 4] }, yAxis: 2 },
@@ -184,7 +184,7 @@ const ball5: SquareStyleType = {
   yAxis: 0,
   props: { className: 'grid-item2' },
 };
-export const prop19: Array<SquareStyleType> = [
+const prop19: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [2, 3, 4] }, yAxis: 2 },
@@ -195,7 +195,7 @@ export const prop19: Array<SquareStyleType> = [
   },
   ball5,
 ];
-export const prop20: Array<SquareStyleType> = [
+const prop20: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 2, yAxis: 1 },
@@ -206,7 +206,7 @@ export const prop20: Array<SquareStyleType> = [
   },
   ball5,
 ];
-export const prop21: Array<SquareStyleType> = [
+const prop21: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 2, yAxis: { $in: [0, 1] } },
@@ -217,7 +217,7 @@ export const prop21: Array<SquareStyleType> = [
   },
   ball5,
 ];
-export const prop22: Array<SquareStyleType> = [
+const prop22: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 1, yAxis: 0 },
@@ -234,7 +234,7 @@ const ball6: SquareStyleType = {
   yAxis: 4,
   props: { className: 'grid-item1' },
 };
-export const prop23: Array<SquareStyleType> = [
+const prop23: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: { $in: [0, 1] }, yAxis: 0 },
@@ -246,7 +246,7 @@ export const prop23: Array<SquareStyleType> = [
   },
   ball6,
 ];
-export const prop24: Array<SquareStyleType> = [
+const prop24: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 0, yAxis: 1 },
@@ -258,7 +258,7 @@ export const prop24: Array<SquareStyleType> = [
   },
   ball6,
 ];
-export const prop25: Array<SquareStyleType> = [
+const prop25: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 0, yAxis: { $in: [1, 2] } },
@@ -270,7 +270,7 @@ export const prop25: Array<SquareStyleType> = [
   },
   ball6,
 ];
-export const prop26: Array<SquareStyleType> = [
+const prop26: Array<SquareStyleType> = [
   {
     $or: [
       { xAxis: 0, yAxis: { $in: [1, 2, 3] } },
@@ -281,4 +281,33 @@ export const prop26: Array<SquareStyleType> = [
     props: { className: 'grid-item2' },
   },
   ball6,
+];
+
+export const squares = [
+  { props: prop1 },
+  { props: prop2 },
+  { props: prop3 },
+  { props: prop4 },
+  { props: prop5 },
+  { props: prop6 },
+  { props: prop7 },
+  { props: prop8 },
+  { props: prop9 },
+  { props: prop10 },
+  { props: prop11 },
+  { props: prop12 },
+  { props: prop13 },
+  { props: prop14 },
+  { props: prop15 },
+  { props: prop16 },
+  { props: prop17 },
+  { props: prop18 },
+  { props: prop19 },
+  { props: prop20 },
+  { props: prop21 },
+  { props: prop22 },
+  { props: prop23 },
+  { props: prop24 },
+  { props: prop25 },
+  { props: prop26 },
 ];

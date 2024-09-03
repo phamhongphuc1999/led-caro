@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useAnimatedSquareStyle } from './hooks/useAnimatedSquareStyle';
 import { SimpleGridCaro } from './SimpleGridCaro';
-import { AnimationCaroProps } from './type';
-
-type CounterType = { tick: number; span: number; index: number };
+import { AnimationCaroProps, CounterType } from './type';
 
 export function AnimationCaro(params: AnimationCaroProps) {
   const {
@@ -16,8 +14,10 @@ export function AnimationCaro(params: AnimationCaroProps) {
     squares,
     gridProps,
     interval = 1000,
+    events,
     ...props
   } = params;
+  const onTick = events?.onTick;
   const { style, metadata } = useAnimatedSquareStyle(rows, columns, squares);
   const [counter, setCounter] = useState<CounterType>({
     tick: 0,
@@ -27,6 +27,7 @@ export function AnimationCaro(params: AnimationCaroProps) {
 
   const _timer = useCallback(() => {
     setCounter((preValue) => {
+      if (onTick) onTick(preValue);
       let _tick = preValue.tick + 1;
       let _span = preValue.span;
       let _index = preValue.index;
@@ -40,7 +41,7 @@ export function AnimationCaro(params: AnimationCaroProps) {
       }
       return { tick: _tick, span: _span, index: _index };
     });
-  }, [style, metadata.size]);
+  }, [style, metadata.size, onTick]);
 
   useEffect(() => {
     if (metadata.size == 0) return;
@@ -58,7 +59,7 @@ export function AnimationCaro(params: AnimationCaroProps) {
       stickColor={stickColor}
       borderMode={borderMode}
       gridProps={gridProps}
-      squares={style[counter.index].props}
+      squares={metadata.size > 0 ? style[counter.index].props : undefined}
     />
   );
 }

@@ -8,7 +8,9 @@ export function App() {
     <div id="root">
       <BasicCaro style={{ width: '100px', marginBottom: '1rem' }} rows={5} columns={5} />
       <div className="container">
-        <AnimationCaroComponent rows={15} columns={15} />
+        <div>
+          <AnimationCaroComponent rows={20} columns={20} />
+        </div>
         <AnimationCaroComponent rows={10} columns={10} />
       </div>
     </div>
